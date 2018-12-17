@@ -3,6 +3,7 @@
 namespace Laravel\WebhookShield\Services;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Laravel\WebhookShield\Contracts\Service;
 
 /**
@@ -15,13 +16,28 @@ use Laravel\WebhookShield\Contracts\Service;
 class Trello implements Service
 {
     /**
+     * @var string
+     */
+    protected $secret;
+
+    /**
+     * Facebook service constructor.
+     *
+     * @param array $config
+     */
+    public function __construct(array $config)
+    {
+        $this->secret = Arr::get($config, 'secret');
+    }
+
+    /**
      * List request header fields for checking
      *
      * @return array
      */
     public function headerKeys(): array
     {
-        // TODO: Implement headerKeys() method.
+        return ['X-Trello-Webhook'];
     }
 
     /**
@@ -32,6 +48,9 @@ class Trello implements Service
      */
     public function verify(Request $request): bool
     {
-        // TODO: Implement verify() method.
+        $content = trim($request->getContent()) . $request->fullUrl();
+        $generated = hash_hmac('sha1', $content, $this->secret, true);
+
+        return base64_encode($generated) === $request->header('X-Trello-Webhook');
     }
 }

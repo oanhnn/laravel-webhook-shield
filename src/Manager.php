@@ -141,6 +141,6 @@ class Manager
      */
     public function services()
     {
-        return array_keys($this->services);
+        return array_keys(Config::get('webhook-shield.services'));
     }
 }

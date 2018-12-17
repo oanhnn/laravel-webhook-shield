@@ -12,9 +12,9 @@ use Laravel\WebhookShield\Manager;
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT License
  *
- * @method \Laravel\WebhookShield\Contracts\Service service(string $name)
- * @method array services()
- * @method \Laravel\WebhookShield\Manager extend(string $driver, \Closure $callback)
+ * @method static \Laravel\WebhookShield\Contracts\Service service(string $name)
+ * @method static array services()
+ * @method static \Laravel\WebhookShield\Manager extend(string $driver, \Closure $callback)
  */
 class Shield extends Facade
 {

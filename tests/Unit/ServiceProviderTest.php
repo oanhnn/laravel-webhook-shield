@@ -61,8 +61,7 @@ class ServiceProviderTest extends TestCase
      */
     public function testDefaultConfigValues()
     {
-        $this->assertIsArray(config('webhook-shield.services'));
-        $this->assertEmpty(config('webhook-shield.services'));
+        $this->assertEquals([], config('webhook-shield.services'));
     }
 
     /**
@@ -71,5 +70,6 @@ class ServiceProviderTest extends TestCase
     public function testBoundManager()
     {
         $this->assertTrue($this->app->bound(Manager::class));
+        $this->assertInstanceOf(Manager::class, $this->app->get(Manager::class));
     }
 }

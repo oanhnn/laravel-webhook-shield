@@ -22,7 +22,7 @@ The package will automatically register itself.
 You can publish the config-file with:
 
 ```bash
-$ php artisan vendor:publish --provider=\Laravel\WebhookShield\ServiceProvider
+$ php artisan vendor:publish --provider=Laravel\WebhookShield\ServiceProvider
 ```
 
 ## Usage
