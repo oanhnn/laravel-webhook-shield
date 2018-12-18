@@ -23,7 +23,6 @@
     "illuminate/support": "^5.5"
   },
   "require-dev": {
-    "mockery/mockery": "^0.9",
     "orchestra/testbench": "^3.5",
     "phpunit/phpunit": "~6.1|~7.0",
     "squizlabs/php_codesniffer": "^3.0"

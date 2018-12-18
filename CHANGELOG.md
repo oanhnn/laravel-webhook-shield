@@ -26,9 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 
-## 0.1.0 - 2018-12-18
+## 1.0.0 - 2018-12-18
 
 First release
 
 
-[Unreleased]: https://github.com/oanhnn/laravel-webhook-shield/compare/v0.1.0...develop
+[Unreleased]: https://github.com/oanhnn/laravel-webhook-shield/compare/v1.0.0...develop

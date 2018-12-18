@@ -65,7 +65,7 @@ class Manager
                 throw new UnknownServiceException("Service [{$name}] not defined.");
             }
             if (!Config::has("webhook-shield.services.{$name}.driver")) {
-                throw new UnknownServiceException("Service [$name] must have a driver.");
+                throw new UnknownServiceException("Service [{$name}] must have a driver.");
             }
 
             $driver = Config::get("webhook-shield.services.{$name}.driver");
