@@ -90,7 +90,7 @@ class ManagerTest extends TestCase
 
         $manager->extend('baz', $closure);
 
-        $this->assertIsArray($this->getNonPublicProperty($manager, 'customCreators'));
+        $this->assertTrue(is_array($this->getNonPublicProperty($manager, 'customCreators')));
         $this->assertArrayHasKey('baz', $this->getNonPublicProperty($manager, 'customCreators'));
         $this->assertSame($closure, $this->getNonPublicProperty($manager, 'customCreators')['baz']);
     }
