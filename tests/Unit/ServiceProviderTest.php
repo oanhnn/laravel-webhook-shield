@@ -6,6 +6,13 @@ use Illuminate\Filesystem\Filesystem;
 use Laravel\WebhookShield\Manager;
 use Laravel\WebhookShield\Tests\TestCase;
 
+/**
+ * Class ServiceProviderTest
+ *
+ * @package     Laravel\WebhookShield\Tests\Unit
+ * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
+ * @license     The MIT License
+ */
 class ServiceProviderTest extends TestCase
 {
     /**

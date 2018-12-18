@@ -3,7 +3,6 @@
 namespace Laravel\WebhookShield\Services;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Laravel\WebhookShield\Contracts\Service;
 
 /**
@@ -27,7 +26,7 @@ class Gitlab implements Service
      */
     public function __construct(array $config)
     {
-        $this->token = Arr::get($config, 'token');
+        $this->token = $config['token'] ?? '';
     }
 
     /**
@@ -48,6 +47,6 @@ class Gitlab implements Service
      */
     public function verify(Request $request): bool
     {
-        return $request->header('X-Gitlab-Token') == $this->token;
+        return hash_equals($this->token, $request->header('X-Gitlab-Token'));
     }
 }

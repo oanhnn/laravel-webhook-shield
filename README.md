@@ -5,6 +5,20 @@
 
 Protects against unverified webhooks from 3rd party services on Laravel 5.5+
 
+## Features
+
+* Supported Laravel 5.5+
+* Allow multi services with same driver (Useful for two webhook endpoints of two facebook applications)
+* Supported drivers
+   - [x] Bitbucket
+   - [x] Facebook
+   - [x] Github
+   - [x] Gitlab
+   - [x] Mailgun
+   - [x] Shopify
+   - [x] Trello
+* Easy to extend more drivers
+
 ## Requirements
 
 * php >=7.1.3
@@ -26,7 +40,6 @@ $ php artisan vendor:publish --provider=Laravel\WebhookShield\ServiceProvider
 ```
 
 ## Usage
-
 
 ### Configure services
 

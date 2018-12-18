@@ -10,6 +10,13 @@ use Laravel\WebhookShield\Manager;
 use Laravel\WebhookShield\Tests\NonPublicAccessibleTrait;
 use Laravel\WebhookShield\Tests\TestCase;
 
+/**
+ * Class WebhookShieldTest
+ *
+ * @package     Laravel\WebhookShield\Tests\Unit\Http\Middleware
+ * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
+ * @license     The MIT License
+ */
 class WebhookShieldTest extends TestCase
 {
     use NonPublicAccessibleTrait;

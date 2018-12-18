@@ -3,7 +3,6 @@
 namespace Laravel\WebhookShield\Services;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Laravel\WebhookShield\Contracts\Service;
 
 /**
@@ -27,7 +26,7 @@ class Bitbucket implements Service
      */
     public function __construct(array $config)
     {
-        $this->token = Arr::get($config, 'token');
+        $this->token = $config['token'] ?? '';
     }
 
     /**

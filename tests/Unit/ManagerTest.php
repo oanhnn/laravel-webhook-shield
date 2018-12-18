@@ -6,6 +6,13 @@ use Laravel\WebhookShield\Manager;
 use Laravel\WebhookShield\Tests\NonPublicAccessibleTrait;
 use Laravel\WebhookShield\Tests\TestCase;
 
+/**
+ * Class ManagerTest
+ *
+ * @package     Laravel\WebhookShield\Tests\Unit
+ * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
+ * @license     The MIT License
+ */
 class ManagerTest extends TestCase
 {
     use NonPublicAccessibleTrait;

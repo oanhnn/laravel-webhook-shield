@@ -3,7 +3,6 @@
 namespace Laravel\WebhookShield\Services;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Laravel\WebhookShield\Contracts\Service;
 
 /**
@@ -27,7 +26,7 @@ class Trello implements Service
      */
     public function __construct(array $config)
     {
-        $this->secret = Arr::get($config, 'secret');
+        $this->secret = $config['secret'] ?? '';
     }
 
     /**
@@ -49,8 +48,8 @@ class Trello implements Service
     public function verify(Request $request): bool
     {
         $content = trim($request->getContent()) . $request->fullUrl();
-        $generated = hash_hmac('sha1', $content, $this->secret, true);
+        $generated = base64_encode(hash_hmac('sha1', $content, $this->secret, true));
 
-        return base64_encode($generated) === $request->header('X-Trello-Webhook');
+        return hash_equals($generated, $request->header('X-Trello-Webhook'));
     }
 }

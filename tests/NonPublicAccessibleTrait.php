@@ -10,6 +10,10 @@ use ReflectionProperty;
  * Trait NonPublicAccessibleTrait
  *
  * Help access to non-public property and method of an object
+ *
+ * @package     Laravel\WebhookShield\Tests
+ * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
+ * @license     The MIT License
  */
 trait NonPublicAccessibleTrait
 {

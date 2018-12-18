@@ -3,7 +3,6 @@
 namespace Laravel\WebhookShield\Services;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Laravel\WebhookShield\Contracts\Service;
 
 /**
@@ -27,7 +26,7 @@ class Facebook implements Service
      */
     public function __construct(array $config)
     {
-        $this->secret = Arr::get($config, 'secret');
+        $this->secret = $config['secret'] ?? '';
     }
 
     /**

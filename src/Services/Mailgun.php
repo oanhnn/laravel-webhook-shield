@@ -3,7 +3,6 @@
 namespace Laravel\WebhookShield\Services;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Laravel\WebhookShield\Contracts\Service;
 
 /**
@@ -32,8 +31,8 @@ class Mailgun implements Service
      */
     public function __construct(array $config)
     {
-        $this->token = Arr::get($config, 'token');
-        $this->tolerance = Arr::get($config, 'tolerance', 5 * 60); // default tolerance is 5 minutes
+        $this->token = $config['token'] ?? '';
+        $this->tolerance = $config['tolerance'] ?? 300; // default tolerance is 5 minutes
     }
 
     /**
@@ -62,6 +61,6 @@ class Mailgun implements Service
 
         $generated = hash_hmac('sha256', $timestamp . $request->input('token'), $this->token);
 
-        return $generated === $request->input('signature');
+        return hash_equals($generated, $request->input('signature'));
     }
 }
