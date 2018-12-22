@@ -1,7 +1,11 @@
 # Introduction
 
-[![Build Status](https://travis-ci.org/oanhnn/laravel-webhook-shield.svg?branch=master)](https://travis-ci.org/oanhnn/laravel-webhook-shield)
-[![Coverage Status](https://coveralls.io/repos/github/oanhnn/laravel-webhook-shield/badge.svg?branch=master)](https://coveralls.io/github/oanhnn/laravel-webhook-shield?branch=master)
+[![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-webhook-shield.svg)](https://packagist.org/packages/oanhnn/laravel-webhook-shield)
+[![Software License](https://img.shields.io/github/license/oanhnn/laravel-webhook-shield.svg)](LICENSE.md)
+[![Build Status](https://img.shields.io/travis/oanhnn/laravel-webhook-shield/master.svg)](https://travis-ci.org/oanhnn/laravel-webhook-shield)
+[![Coverage Status](https://img.shields.io/coveralls/github/oanhnn/laravel-webhook-shield/master.svg)](https://coveralls.io/github/oanhnn/laravel-webhook-shield?branch=master)
+[![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-webhook-shield.svg)](https://packagist.org/packages/oanhnn/laravel-webhook-shield)
+[![Requires PHP](https://img.shields.io/travis/php-v/oanhnn/laravel-webhook-shield.svg)](https://travis-ci.org/oanhnn/laravel-webhook-shield)
 
 Protects against unverified webhooks from 3rd party services on Laravel 5.5+
 
