@@ -20,8 +20,8 @@ trait NonPublicAccessibleTrait
     /**
      * Get a non public property of an object
      *
-     * @param object $obj
-     * @param string $property
+     * @param  object $obj
+     * @param  string $property
      * @return mixed
      * @throws \ReflectionException
      */
@@ -39,9 +39,9 @@ trait NonPublicAccessibleTrait
     /**
      * Set value for a non public property of an object
      *
-     * @param object $obj
-     * @param string $property
-     * @param mixed $value
+     * @param  object $obj
+     * @param  string $property
+     * @param  mixed  $value
      * @return void
      * @throws \ReflectionException
      */
@@ -58,10 +58,10 @@ trait NonPublicAccessibleTrait
     /**
      * Call protected/private method of a class.
      *
-     * @param object $obj Instantiated object that we will run method on.
-     * @param string $method Method name to call
-     * @param array $params Array of parameters to pass into method.
-     * @return mixed         Method return.
+     * @param  object $obj    Instantiated object that we will run method on.
+     * @param  string $method Method name to call
+     * @param  array  $params Array of parameters to pass into method.
+     * @return mixed          Method return.
      * @throws \InvalidArgumentException
      * @throws \ReflectionException
      */

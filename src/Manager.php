@@ -53,7 +53,7 @@ class Manager
     /**
      * Get a service instance.
      *
-     * @param string $name
+     * @param  string $name
      * @return Service
      * @throws UnknownServiceException
      * @throws UnsupportedDriverException

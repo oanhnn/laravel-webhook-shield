@@ -91,9 +91,9 @@ class MailgunTest extends TestCase
 
     /**
      * @param string $method
-     * @param array $data
+     * @param array  $data
      * @param string $token
-     * @param bool $excepted
+     * @param bool   $excepted
      * @dataProvider dataTestVerify
      */
     public function testVerify(string $method, array $data, string $token, bool $excepted)

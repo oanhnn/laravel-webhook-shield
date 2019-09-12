@@ -23,7 +23,7 @@ interface Service
     /**
      * Verify request
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return bool
      */
     public function verify(Request $request): bool;

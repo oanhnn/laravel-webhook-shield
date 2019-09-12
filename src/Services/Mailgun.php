@@ -27,7 +27,7 @@ class Mailgun implements Service
     /**
      * Mailgun constructor.
      *
-     * @param array $config
+     * @param  array $config
      */
     public function __construct(array $config)
     {
@@ -48,7 +48,7 @@ class Mailgun implements Service
     /**
      * Verify request
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request $request
      * @return bool
      */
     public function verify(Request $request): bool

@@ -26,7 +26,7 @@ class ManagerTest extends TestCase
     /**
      * Setting up before test
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
