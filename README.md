@@ -28,6 +28,8 @@ Protects against unverified webhooks from 3rd party services on Laravel 5.5+
 * php >=7.1.3
 * Laravel 5.5+
 
+> Laravel 6.0+ required php 7.2+
+
 ## Installation
 
 Begin by pulling in the package through Composer.
@@ -161,4 +163,4 @@ using the issue tracker.
 ## License
 
 This project is released under the MIT License.   
-Copyright © 2018 [Oanh Nguyen](https://oanhnn.github.io/).
+Copyright © 2018-2019 [Oanh Nguyen](https://oanhnn.github.io/).
