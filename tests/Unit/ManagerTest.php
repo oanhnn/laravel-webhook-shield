@@ -9,6 +9,7 @@ use Laravel\WebhookShield\Exceptions\UnsupportedDriverException;
 use Laravel\WebhookShield\Manager;
 use Laravel\WebhookShield\Services\Facebook;
 use Laravel\WebhookShield\Services\Github;
+use Laravel\WebhookShield\Tests\Mock;
 use Laravel\WebhookShield\Tests\NonPublicAccessibleTrait;
 use Laravel\WebhookShield\Tests\TestCase;
 
@@ -102,7 +103,7 @@ class ManagerTest extends TestCase
     {
         $config = [];
         $manager = new Manager($this->app);
-        $closure = $this->mockClosure($config);
+        $closure = $this->mockClosure([$this->app, $config], true);
 
         $manager->extend('baz', $closure);
 
@@ -143,7 +144,7 @@ class ManagerTest extends TestCase
     {
         $config = [];
         $manager = new Manager($this->app);
-        $closure = $this->mockClosure($config);
+        $closure = $this->mockClosure([$this->app, $config], true);
 
         $manager->extend('baz', $closure);
 
@@ -168,15 +169,9 @@ class ManagerTest extends TestCase
      */
     public function testServiceWasCreatedOnlyOneTime()
     {
-        $mockObj = $this->createPartialMock(\stdClass::class, ['__invoke']);
-
-        $mockObj->expects($this->once())
-            ->method('__invoke')
-            ->with($this->app, ['token' => 'baz'])
-            ->willReturn(new Github(['token' => 'baz']));
-
         $manager = new Manager($this->app);
-        $closure = Closure::fromCallable($mockObj);
+        $config = ['token' => 'baz'];
+        $closure = $this->mockClosure([$this->app, $config], new Github($config));
 
         $manager->extend('baz', $closure);
 
@@ -237,7 +232,8 @@ class ManagerTest extends TestCase
     public function testServiceWithInvalidDriver()
     {
         $manager = new Manager($this->app);
-        $closure = $this->mockClosure(['token' => 'baz']);
+        $config = ['token' => 'baz'];
+        $closure = $this->mockClosure([$this->app, $config], true);
 
         $manager->extend('baz', $closure);
 
@@ -248,18 +244,19 @@ class ManagerTest extends TestCase
     }
 
     /**
-     * @param array $config
+     * @param  array $params
+     * @param  mixed $result
      * @return Closure
      */
-    protected function mockClosure(array $config): Closure
+    protected function mockClosure(array $params, $result): Closure
     {
-        $mockObj = $this->createPartialMock(\stdClass::class, ['__invoke']);
+        $mockObj = $this->createPartialMock(Mock::class, ['__invoke']);
 
         $mockObj->expects($this->once())
             ->method('__invoke')
-            ->with($this->app, $config)
-            ->willReturn(true);
+            ->with(...$params)
+            ->willReturn($result);
 
-        return Closure::fromCallable($mockObj);
+        return Closure::fromCallable([$mockObj, '__invoke']);
     }
 }

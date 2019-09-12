@@ -23,7 +23,7 @@ class ServiceProviderTest extends TestCase
     /**
      * Set up before test
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -33,7 +33,7 @@ class ServiceProviderTest extends TestCase
     /**
      * Clear up after test
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->files->delete([
             $this->app->configPath('webhook-shield.php'),

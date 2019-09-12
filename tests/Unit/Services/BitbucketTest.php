@@ -27,7 +27,7 @@ class BitbucketTest extends TestCase
     /**
      * Setting up before test
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -39,7 +39,7 @@ class BitbucketTest extends TestCase
     /**
      * Tear down after test
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->service);
 
